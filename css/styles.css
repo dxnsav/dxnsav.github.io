@@ -100,7 +100,7 @@ body {
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 0 30px 1px rgba(0, 0, 0, 0.2);
 
   font-size: 1em;
-  line-height: 1.2em;
+  line-height: 1em;
 }
 
 .terminal::before {
@@ -150,7 +150,7 @@ button {
   white-space: nowrap;
   overflow: hidden;
   text-align: center;
-  
+
   font-family: "PT Sans", sans-serif;
 }
 
