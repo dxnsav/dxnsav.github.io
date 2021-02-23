@@ -33,10 +33,15 @@ html[data-theme='dark'] {
 
 body {
   margin: 0;
+  padding: 20px;
+
   display: flex;
   min-height: 100vh;
   align-items: center;
   justify-content: center;
+
+
+
   background: linear-gradient(var(--bg-gradient1-color), var(--bg-gradient2-color));
 }
 
@@ -44,7 +49,6 @@ body {
   position: relative;
   width: 70vw;
   min-height: 300px;
-  margin: 25px;
   margin-top: 25px;
   padding: 10px;
 
