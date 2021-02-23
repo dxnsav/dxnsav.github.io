@@ -133,7 +133,7 @@ button {
   display: block;
 
   height: 25px;
-  width: 50px;
+  width: 60px;
   top: -25px;
   right: 0;
 
@@ -144,6 +144,14 @@ button {
   background: linear-gradient(0deg,  var(--bg-gradient-title1-color), var(--bg-gradient-title2-color));
   color: var(--terminal-title-color);
 
+  font-size: 1em;
+  line-height: 25px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
+  
+  font-family: "PT Sans", sans-serif;
 }
 
 .terminal::after {

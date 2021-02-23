@@ -2,13 +2,13 @@ function toggleDarkLight() {
   var body = document.getElementById("body");
   var currentClass = body.className;
 
-  //body.className = currentClass == "dark-mode" ? ("light-mode") : ("dark-mode");
-
   if (currentClass == "dark-mode") {
     trans();
+    btn.textContent = "@light";
     body.className = "light-mode";
   } else {
     trans();
+    btn.textContent = "@dark";
     body.className = "dark-mode";
   }
  }
