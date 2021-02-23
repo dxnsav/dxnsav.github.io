@@ -33,10 +33,11 @@ html[data-theme='dark'] {
 
 body {
   margin: 0;
-  padding: 20px;
+  padding: 15%;
 
   display: flex;
   min-height: 100vh;
+  max-height: 200vh;
   align-items: center;
   justify-content: center;
 
