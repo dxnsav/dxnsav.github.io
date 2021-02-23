@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,10 +8,10 @@
 
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-  <div class="cv">
+<body id="body" class="light-mode">
     <section>
       <div class="terminal" data-content="~/macos/terminal">
+        <button type="button" name="dark_light" onclick="toggleDarkLight()" title="Toggle dark/light mode">F</button>
         <p>Denis.origin</p>
         <p class="answer">"Kharkiv, UA"</p>
         <br><br>
@@ -37,8 +37,8 @@
         <p>Denis.email</p>
         <p class="answer"><a href="mailto:dxnsav@gmail.com">"dxnsav@gmail.com"</a></p>
       </div>
-
+      
     </section>
-  </div>
+  <script src="scripts/script.js"></script>
 </body>
 </html>
