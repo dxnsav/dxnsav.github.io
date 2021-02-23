@@ -1,0 +1,126 @@
+@font-face {
+  font-family: "PT Mono", monospace;
+  src: url(fonts/PTMono-Regular.ttf);
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "PT Sans", sans-serif;
+  src: url(fonts/PTSans-Regular.ttf);
+  font-style: normal;
+  font-weight: normal;
+}
+
+html {
+  font-family: "PT Mono", monospace;
+  font-size: 16px;
+
+  --bg-gradient1-color: #40bfbf;
+  --bg-gradient2-color: #4095bf;
+
+  --bg-terminal-color: #0f3642;
+  --terminal-text-color: #b4c4c6;
+  --termianl-text-answer-color: #d9e1e2; 
+  --terminal-title-color: #4c3436;
+}
+
+
+html[data-theme='dark'] {
+  --bg-gradient1-color: #141e30;
+  --bg-gradient2-color: #243b55;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(var(--bg-gradient1-color), var(--bg-gradient2-color));
+}
+
+.terminal {
+  position: relative;
+  width: 70vw;
+  min-height: 300px;
+  margin-top: 25px;
+  padding: 10px;
+
+  background-color: var(--bg-terminal-color);
+  color: var(--terminal-text-color);
+
+  border-radius: 0 0 7px 7px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 0 30px 1px rgba(0, 0, 0, 0.2);
+
+  font-size: 1em;
+  line-height: 1.2em;
+}
+
+.terminal::before {
+  position: absolute;
+  display: block;
+
+  width: 100%;
+  height: 25px;
+  top: -25px;
+  left: 0;
+
+  background: linear-gradient(0deg,  #d8d8d8, #ececec);
+  color: var(--terminal-title-color);
+
+  border-radius: 7px 7px 0 0;
+
+  font-size: 1em;
+  line-height: 25px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
+
+  font-family: "PT Sans", sans-serif;
+  content: attr(data-content);
+}
+
+.terminal::after {
+  position: absolute;
+  
+  width: 12px;
+  height: 12px;
+
+  top: -18px;
+  left: 10px;
+
+  background: #f95c5b;
+
+  border-radius: 100%;
+  box-shadow: 0 0 0 1px #da3d42, 22px 0 0 0 #fabe3b, 22px 0 0 1px #ecb03e, 44px 0 0 0 #38cd46, 44px 0 0 1px #2eae32;
+
+  content: "";
+}
+
+.terminal p {
+  margin: 0;
+}
+
+.terminal p.answer, .terminal p.answer-list  {
+  color: var(--termianl-text-answer-color);
+}
+
+.terminal p::before {
+  color: #5ed7ff;
+  content: "~$ ";
+}
+
+.terminal p.answer::before {
+  content: "~$ \a0\a0"
+}
+
+.terminal p.answer-list::before {
+  content: "~$ \a0\a0\a0\a0\a0\a0"
+}
+
+.terminal p.answer a {
+  color: #fabe3b;
+}
+
