@@ -1,44 +1,111 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 
 * {
-  outline: 0 !important;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
-html {
-  background-color: #E0E9FA; 
-  height: 100%;
-  font-family: 'Roboto', sans-serif;
-}
-
-body {
- 
-  height: 95%;
-}
-
-
-
-#mainDiv {
-  margin: auto;
-  height: 100%;
-
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 100px;
+  z-index: 1000;
   display: flex;
-  flex-direction: column;
-  justify-content: center;/**/
-  
-  min-width: 480px;
-  max-width: 768px;
-
+  justify-content: flex-end;
   align-items: center;
-
 }
 
-#outputDiv {
-  margin-bottom: 20vh;;
+.toggle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: url(https://i.ibb.co/HrfVRcx/menu.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.toggle.active {
+  background: url(https://i.ibb.co/rt3HybH/close.png);
+  background-repeat: no-repeat;
+  background-size: 25px;
+  background-position: center;
+  cursor: pointer;
+}
+
+.showcase {
+  position: absolute;
+  right: 0;
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #e0e9fa;
+  transition: 0.5s;
+  z-index: 2;
+}
+
+.showcase.active {
+  right: 300px;
+}
+
+.text {
+  position: relative;
+  z-index: 10;
+  margin: 0 auto;
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu ul {
+  position: relative;
+}
+
+.menu ul li {
+  list-style: none;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  font-size: 24px;
+  color: #111;
+}
+
+.menu ul li a:hover {
+  color: #03a9f4;
+}
+
+@media (max-width: 991px) {
+  .showcase,
+  .showcase header {
+    padding: 40px;
+  }
+  .text h2 {
+    font-size: 3em;
+  }
+  .text h3 {
+    font-size: 2em;
+  }
 }
 
 #outputTextElement {
   font-size: 85px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   color: #000;
 
@@ -46,7 +113,7 @@ body {
 }
 
 .highlight {
-  color: #6D6AF1;
+  color: #6d6af1;
 }
 
 .numberInfo {
@@ -58,7 +125,7 @@ body {
 #speedInputElement {
   border: none;
   background: none;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 30px !important;
 }
@@ -67,15 +134,15 @@ body {
   width: 100%;
   height: 10px;
   margin: 0 auto;
-  
-  background-color: #EAF0FC;
+
+  background-color: #eaf0fc;
   border-radius: 5px;
 }
 
 #progressBarDiv {
   width: 0px;
   height: 100%;
-  background-color: #6D6AF1;
+  background-color: #6d6af1;
 
   border-radius: 5px;
 }
@@ -96,7 +163,6 @@ body {
   margin: 0px 6px 0px 6px;
   text-align: center;
 
-
   border: 0;
 
   cursor: pointer;
@@ -115,28 +181,26 @@ body {
 }
 
 textarea {
-
   /*display: none;/**/
 
   background: rgba(255, 255, 255, 0.33);
-  
+
   width: 100%;
   display: block;
   margin: 0 auto;
-  
 
   height: 100px;
-  
+
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.25), inset 0 0 40px #bbbbbb;
   border-radius: 30px;
 
   padding: 10px;
-  
+
   resize: none;
 }
 
 textarea::selection {
-  background: #6D6AF1;
+  background: #6d6af1;
   color: #fff;
 }
 
@@ -151,14 +215,13 @@ textarea::-webkit-scrollbar-track {
 
 textarea::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background-color: #6D6AF1;
+  background-color: #6d6af1;
   cursor: pointer !important;
 }
 
 .numberInfo {
   font-size: 20px;
 }
-
 
 .UIText {
   color: #363537;
@@ -174,7 +237,6 @@ textarea::-webkit-scrollbar-thumb {
 
 .UIInputReadOnly {
   background-color: rgba(176, 176, 176, 0.53);
-  
 }
 
 #counterMins {

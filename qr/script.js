@@ -505,6 +505,8 @@ var SpeedReader = (function () {
       counterMins.innerHTML = Math.ceil(
         (text.match(/[^\s]+/g).length - text.substring(0, textIndex - 1).match(/[^\s]+/g).length) / wpm
       ) + " мин";/** */
+
+      console.log(text.length);
     }
   };
 

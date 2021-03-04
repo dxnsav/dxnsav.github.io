@@ -12,51 +12,75 @@
     <title>Quick Reader</title>
   </head>
   <body>
-    <div id="mainDiv">
-      <div id="outputDiv">
-        <span id="outputTextElement">Quick <span class="highlight">R</span>ead</span>
-      </div>
-      <span class="numberInfo">
-        Скорость
-        <input type="text" id="speedInputElement" size="5" value="300"/>
-        Время
-        <span id="counterMins"></span>
-      </span>
-      <div id="controlButtons">
-        <input type="button" class="controlButton fa" id="goBackButton" value="&#xf04a;" />
-        <input type="button" class="controlButton fa" id="startStopButton" value="&#xf04b;;" />
-        <input type="button" class="controlButton fa" id="pauseResumeButton" value="&#xf04c;" />
-        <input type="button" class="controlButton fa" id="goForwardButton" value="&#xf04e;" />
-        <input type="button" class="controlButton fa" id="slowerButton" value="&#xf103;" />
-        <input type="button" class="controlButton fa" id="fasterButton" value="&#xf102;" />
-      </div>
-      <div id="progressBarBaseDiv">
-        <div id="progressBarDiv"></div>
-      </div>
+    <section class="showcase">
+      <header>
+        <div class="toggle"></div>
+      </header>
 
-      <div id="inputTextAreaDiv">
-        <form action="" method="post">
-          <textarea id="inputTextArea" class="UIInput" wrap="soft"></textarea>
-          <input id="fileReader" type="file" accept=".txt,.fb2" onchange="readFile(this)" />
-        </form>
+      <div class="text">
+        <div id="outputDiv">
+          <span id="outputTextElement">Quick <span class="highlight">R</span>ead</span>
+        </div>
+        <span class="numberInfo">
+          Скорость
+          <input type="text" id="speedInputElement" size="5" value="300" />
+          Время
+          <span id="counterMins"></span>
+        </span>
+        <div id="controlButtons">
+          <input type="button" class="controlButton fa" id="goBackButton" value="&#xf04a;" />
+          <input type="button" class="controlButton fa" id="startStopButton" value="&#xf04b;;" />
+          <input type="button" class="controlButton fa" id="pauseResumeButton" value="&#xf04c;" />
+          <input type="button" class="controlButton fa" id="goForwardButton" value="&#xf04e;" />
+          <input type="button" class="controlButton fa" id="slowerButton" value="&#xf103;" />
+          <input type="button" class="controlButton fa" id="fasterButton" value="&#xf102;" />
+        </div>
+        <div id="progressBarBaseDiv">
+          <div id="progressBarDiv"></div>
+        </div>
 
-        <div id="speedAndCheckBoxesDiv">
+        <div id="inputTextAreaDiv">
+          <form action="" method="post">
+            <textarea id="inputTextArea" class="UIInput" wrap="soft"></textarea>
+            <input id="fileReader" type="file" accept=".txt,.fb2" onchange="readFile(this)" />
+          </form>
+        </div>
+      </div>
+    </section>
+    <div class="menu">
+      <ul id="speedAndCheckBoxesDiv">
+        <li>
           <span class="UIText">
             <label> <input type="checkbox" id="hideTextArea" /> Hide text box when reading </label>
           </span>
+        </li>
+        <li>
           <span id="alsoTextSpan" class="UIDisabledText">
             <label> <input type="checkbox" id="hideButtons" disabled /> Also hide buttons </label>
           </span>
+        </li>
+        <li>
           <span class="UIText">
             <label> <input type="checkbox" id="multiWordCheckBox" /> Display multiple words </label>
           </span>
+        </li>
+        <li>
           <span class="UIText">
             Average words per minute:
             <span id="wpmDisplay"></span>
           </span>
-        </div>
-      </div>
+        </li>
+      </ul>
     </div>
     <script src="script.js"></script>
+    <script>
+      const menuToggle = document.querySelector(".toggle");
+      const showcase = document.querySelector(".showcase");
+
+      menuToggle.addEventListener("click", () => {
+        menuToggle.classList.toggle("active");
+        showcase.classList.toggle("active");
+      });
+    </script>
   </body>
 </html>
